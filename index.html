@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGIL AI - Autonomous Personal Security</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <h1>🛡️ VIGIL AI</h1>
+                <p class="tagline">Autonomous Personal Security System</p>
+            </div>
+            <div class="status-indicator">
+                <div class="status-dot active"></div>
+                <span>System Active - No Manual Activation Required</span>
+            </div>
+        </header>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard">
+            <!-- Pattern of Life Section -->
+            <section class="card pattern-of-life">
+                <h2>Pattern of Life Model</h2>
+                <p class="subtitle">Continuously building your safety baseline</p>
+                <div class="pol-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Data Points Collected</span>
+                        <span class="stat-value" id="dataPoints">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Model Accuracy</span>
+                        <span class="stat-value" id="modelAccuracy">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Learning Status</span>
+                        <span class="stat-value learning" id="learningStatus">Active</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Real-time Data Streams -->
+            <section class="data-streams">
+                <!-- GPS Location -->
+                <div class="card stream-card">
+                    <div class="stream-header">
+                        <h3>📍 GPS Location</h3>
+                        <span class="stream-status active">Live</span>
+                    </div>
+                    <div class="stream-content">
+                        <div class="location-display">
+                            <p class="coordinates" id="gpsCoords">Lat: 0.0000, Long: 0.0000</p>
+                            <p class="location-name" id="locationName">Current Location</p>
+                        </div>
+                        <div class="safety-indicator">
+                            <div class="safety-level safe" id="locationSafety">
+                                <span class="safety-icon">✓</span>
+                                <span>Safe Zone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ambient Noise -->
+                <div class="card stream-card">
+                    <div class="stream-header">
+                        <h3>🔊 Ambient Noise</h3>
+                        <span class="stream-status active">Live</span>
+                    </div>
+                    <div class="stream-content">
+                        <div class="noise-meter">
+                            <div class="meter-bar">
+                                <div class="meter-fill" id="noiseFill" style="width: 0%"></div>
+                            </div>
+                            <p class="noise-level" id="noiseLevel">0 dB</p>
+                        </div>
+                        <div class="noise-analysis">
+                            <p id="noiseContext">Normal ambient levels</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time of Day Context -->
+                <div class="card stream-card">
+                    <div class="stream-header">
+                        <h3>🕐 Time of Day</h3>
+                        <span class="stream-status active">Live</span>
+                    </div>
+                    <div class="stream-content">
+                        <div class="time-display">
+                            <p class="current-time" id="currentTime">00:00:00</p>
+                            <p class="time-context" id="timeContext">Daytime</p>
+                        </div>
+                        <div class="temporal-pattern">
+                            <p id="temporalAnalysis">Normal activity pattern</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Reasoning Engine -->
+            <section class="card ai-engine">
+                <h2>🧠 AI Reasoning Engine</h2>
+                <p class="subtitle">Detecting subtle anomalies in real-time</p>
+                <div class="engine-status">
+                    <div class="engine-metric">
+                        <span class="metric-label">Processing Speed</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 95%"></div>
+                        </div>
+                        <span class="metric-value">95%</span>
+                    </div>
+                    <div class="engine-metric">
+                        <span class="metric-label">Anomaly Detection</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill" style="width: 87%"></div>
+                        </div>
+                        <span class="metric-value">87%</span>
+                    </div>
+                    <div class="engine-metric">
+                        <span class="metric-label">Threat Assessment</span>
+                        <div class="metric-bar">
+                            <div class="metric-fill active" style="width: 92%"></div>
+                        </div>
+                        <span class="metric-value">92%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Anomaly Detection & Alerts -->
+            <section class="card alerts-section">
+                <h2>⚠️ Anomaly Detection & Alerts</h2>
+                <div class="alert-container" id="alertContainer">
+                    <div class="alert-item info">
+                        <div class="alert-icon">ℹ️</div>
+                        <div class="alert-content">
+                            <h4>System Initialized</h4>
+                            <p>VIGIL AI is now actively monitoring your safety</p>
+                            <span class="alert-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Safety Baseline -->
+            <section class="card baseline-section">
+                <h2>📊 Safety Baseline</h2>
+                <p class="subtitle">Your normal patterns vs. current status</p>
+                <div class="baseline-chart">
+                    <div class="chart-row">
+                        <span class="chart-label">Location Pattern</span>
+                        <div class="chart-bar">
+                            <div class="chart-baseline" style="width: 85%"></div>
+                            <div class="chart-current" style="width: 83%"></div>
+                        </div>
+                        <span class="chart-status normal">Normal</span>
+                    </div>
+                    <div class="chart-row">
+                        <span class="chart-label">Noise Pattern</span>
+                        <div class="chart-bar">
+                            <div class="chart-baseline" style="width: 60%"></div>
+                            <div class="chart-current" style="width: 62%"></div>
+                        </div>
+                        <span class="chart-status normal">Normal</span>
+                    </div>
+                    <div class="chart-row">
+                        <span class="chart-label">Temporal Pattern</span>
+                        <div class="chart-bar">
+                            <div class="chart-baseline" style="width: 75%"></div>
+                            <div class="chart-current" style="width: 76%"></div>
+                        </div>
+                        <span class="chart-status normal">Normal</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>VIGIL AI - Always Watching, Always Protecting | Autonomous Operation Mode</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
